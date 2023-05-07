@@ -99,9 +99,7 @@ const RecommendedMovies = ({ id }) => {
                     />
 
                     <div className="p-4">
-                      <h3 className="font-medium text-white mb-2">
-                        {title}
-                      </h3>
+                      <h3 className="font-medium text-white mb-2">{title}</h3>
                       <p className="text-white">{overview}</p>
                     </div>
                   </div>
