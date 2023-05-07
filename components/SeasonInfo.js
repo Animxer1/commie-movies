@@ -7,11 +7,11 @@ const SeasonInfo = ({ SeasonDetail, tvID }) => {
     <div className="text-center min-h-screen season-details md:mx-24">
       <div className="container mx-auto px-4 py-11 flex flex-col md:flex-row season-container place-content-center">
         <div>
-          <h2 className="text-4xl mt-4 md:mt-0 font-semibold text-gray-300">
+          <h2 className="text-4xl mt-4 md:mt-0 font-semibold text-white">
             Season {SeasonDetail.season_number}
           </h2>
 
-          <p className="text-gray-300 mt-8">{SeasonDetail.overview}</p>
+          <p className="text-white mt-8">{SeasonDetail.overview}</p>
         </div>
       </div>
       {/* <div className="pt-2 pb-8">
@@ -39,7 +39,7 @@ const SeasonInfo = ({ SeasonDetail, tvID }) => {
                 />
                 <p
                   key={index + 4}
-                  className="bg-zinc-800 max-w-[18rem] rounded-sm break-words text-gray-300 text-sm leading-0 font-semibold py-2"
+                  className="bg-zinc-800 max-w-[18rem] rounded-sm break-words text-white text-sm leading-0 font-semibold py-2"
                 >
                   {SeasonDetail.season_number} x {index + 1} : {element.name}
                 </p>

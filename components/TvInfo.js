@@ -8,10 +8,10 @@ const TvInfo = ({ tvDetail, genreArr }) => {
     <div className="tv-details md:pr-24">
       <div className="container mx-auto px-4 py-11 flex flex-col md:flex-row movie-container">
         <div className="md:ml-24">
-          <h2 className="text-4xl mt-4 md:mt-0 font-semibold text-gray-300">
+          <h2 className="text-4xl mt-4 md:mt-0 font-semibold text-white">
             {tvDetail.name}
           </h2>
-          <div className="flex flex-wrap items-center text-gray-300 text-sm my-4">
+          <div className="flex flex-wrap items-center text-white text-sm my-4">
             <svg
               className="fill-current text-orange-500 w-4"
               viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ const TvInfo = ({ tvDetail, genreArr }) => {
             <span>{genreArr.join(" , ")}</span>
           </div>
 
-          <p className="text-gray-300 mt-8">{tvDetail.overview}</p>
+          <p className="text-white mt-8">{tvDetail.overview}</p>
 
           <div className="mt-12">
             <SeasonCards

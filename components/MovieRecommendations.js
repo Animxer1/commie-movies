@@ -90,7 +90,7 @@ const RecommendedMovies = ({ id }) => {
                 style={{ flex: "1 1 20%", maxWidth: "20%" }}
               >
                 <div className="pr-4">
-                  <div className="bg-white shadow-lg rounded-lg aspect-square">
+                  <div className="bg-gray-900 shadow-lg rounded-lg aspect-square">
                     <img
                       className="w-full h-64 object-cover object-center aspect-square"
                       src={`https://image.tmdb.org/t/p/original${poster_path}`}
@@ -99,10 +99,10 @@ const RecommendedMovies = ({ id }) => {
                     />
 
                     <div className="p-4">
-                      <h3 className="font-medium text-gray-900 mb-2">
+                      <h3 className="font-medium text-white mb-2">
                         {title}
                       </h3>
-                      <p className="text-gray-700">{overview}</p>
+                      <p className="text-white">{overview}</p>
                     </div>
                   </div>
                 </div>

@@ -16,7 +16,7 @@ const TvDisplay = ({ tv, pageid = 1 }) => {
           href={`/movie/popular/page/${Number(pageid) - 1}`}
           passHref
         >
-          <a className="bg-gray-800 text-gray-300 rounded-full px-4 py-2 hover:bg-gray-700">
+          <a className="bg-gray-800 text-white rounded-full px-4 py-2 hover:bg-gray-700">
             &laquo; Prev
           </a>
         </Link>
@@ -29,7 +29,7 @@ const TvDisplay = ({ tv, pageid = 1 }) => {
               passHref
             >
               <a
-                className={`bg-gray-800 text-gray-300 rounded-full px-4 py-2 hover:bg-gray-700 ${
+                className={`bg-gray-800 text-white rounded-full px-4 py-2 hover:bg-gray-700 ${
                   pageid == element ? "bg-gray-700" : ""
                 }`}
               >
@@ -43,7 +43,7 @@ const TvDisplay = ({ tv, pageid = 1 }) => {
           href={`/tv/popular/page/${Number(pageid) + 1}`}
           passHref
         >
-          <a className="bg-gray-800 text-gray-300 rounded-full px-4 py-2 hover:bg-gray-700">
+          <a className="bg-gray-800 text-white rounded-full px-4 py-2 hover:bg-gray-700">
             Next &raquo;
           </a>
         </Link>

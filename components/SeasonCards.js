@@ -26,7 +26,7 @@ const SeasonCards = ({ seasonCards, tvDetail }) => {
                     src={posterUrl}
                     alt={name}
                   />
-                  <div className="flex text-gray-300 justify-center text-xl leading-0 font-semibold py-2">
+                  <div className="flex text-white justify-center text-xl leading-0 font-semibold py-2">
                     {name}
                   </div>
                 </a>

@@ -66,7 +66,7 @@ const Search = ({ apiKey }) => {
                     />
                     <p className="px-2 py-1 text-white text-sm truncate">
                       {title || name}{" "}
-                      <span className="text-gray-400 text-xs">{year}</span>
+                      <span className="text-white text-xs">{year}</span>
                     </p>
                   </a>
                 </Link>

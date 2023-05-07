@@ -15,16 +15,16 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
     <div className="episode-details container mx-auto px-4 py-11 md:mx-24">
       <div className="flex flex-col md:flex-row episode-container justify-center items-center">
         <div className="w-full md:w-1/2 md:mr-10">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-4">
+          <h2 className="text-4xl font-semibold text-white mb-4">
             {seasonid} x {epid} : {EpisodeDetail.name}
           </h2>
-          <div className="text-gray-500 text-sm mb-4">
+          <div className="text-white text-sm mb-4">
             {EpisodeDetail.air_date}
           </div>
-          <p className="text-gray-700 text-lg leading-7 mb-8">
+          <p className="text-white text-lg leading-7 mb-8">
             {EpisodeDetail.overview}
           </p>
-          <div className="flex items-center text-gray-500 text-sm mb-4">
+          <div className="flex items-center text-white text-sm mb-4">
             <span>{EpisodeDetail.vote_average}</span>
             <span className="mx-2">|</span>
             <span>{EpisodeDetail.vote_count} votes</span>
