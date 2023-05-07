@@ -31,7 +31,10 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
           </div>
           <div className="flex justify-center">
             {prevEp && (
-              <Link href={`/tv/${showid}/season/${seasonid}/${prevEp}`}>
+              <Link
+                legacyBehavior
+                href={`/tv/${showid}/season/${seasonid}/${prevEp}`}
+              >
                 <a className="bg-gray-900 text-white px-6 py-3 rounded-md mr-4">
                   Previous Episode
                 </a>
@@ -39,7 +42,10 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
             )}
 
             {nextEp && (
-              <Link href={`/tv/${showid}/season/${seasonid}/${nextEp}`}>
+              <Link
+                legacyBehavior
+                href={`/tv/${showid}/season/${seasonid}/${nextEp}`}
+              >
                 <a className="bg-gray-900 text-white px-6 py-3 rounded-md">
                   Next Episode
                 </a>

@@ -9,14 +9,17 @@ const Search = ({ apiKey }) => {
   const [data, setData] = useState();
   const [value] = useDebounce(query, 1000);
 
-  useEffect(async () => {
-    if (query) {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&page=1&query=${value}`
-      );
-      const { results: apiData } = await res.json();
-      setData(apiData);
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      if (query) {
+        const res = await fetch(
+          `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&page=1&query=${value}`
+        );
+        const { results: apiData } = await res.json();
+        setData(apiData);
+      }
+    };
+    fetchData();
   }, [value]);
 
   return (
@@ -54,7 +57,7 @@ const Search = ({ apiKey }) => {
                 key={id}
                 className="bg-zinc-800 rounded-lg overflow-hidden hover:opacity-70"
               >
-                <Link href={url}>
+                <Link legacyBehavior href={url}>
                   <a className="block">
                     <img
                       className="object-cover w-full h-80 sm:h-96"

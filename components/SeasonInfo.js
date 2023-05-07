@@ -21,6 +21,7 @@ const SeasonInfo = ({ SeasonDetail, tvID }) => {
         {epArray.map((element, index) => (
           <div key={index + 1} className="px-1 py-1 overflow-hidden">
             <Link
+              legacyBehavior
               href={`/tv/${tvID}/season/${SeasonDetail.season_number}/${
                 index + 1
               }`}

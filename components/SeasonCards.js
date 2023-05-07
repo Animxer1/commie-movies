@@ -16,6 +16,7 @@ const SeasonCards = ({ seasonCards, tvDetail }) => {
           >
             <div className="rounded-md overflow-hidden">
               <Link
+                legacyBehavior
                 href={`/tv/${tvDetail.id}/season/${season_number}`}
                 as={`/tv/${tvDetail.id}/season/${season_number}`}
               >

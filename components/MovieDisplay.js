@@ -20,13 +20,22 @@ const MovieDisplay = ({ movie, pageid }) => {
         ))}
       </div>
       <div className="flex justify-center mt-8 space-x-4 mb-10">
-        <Link href={`/movie/popular/page/${Number(pageid) - 1}`} passHref>
+        <Link
+          legacyBehavior
+          href={`/movie/popular/page/${Number(pageid) - 1}`}
+          passHref
+        >
           <a className="bg-gray-800 text-gray-300 rounded-full px-4 py-2 hover:bg-gray-700">
             &laquo; Prev
           </a>
         </Link>
         {pagenum.map((element) => (
-          <Link key={element} href={`/movie/popular/page/${element}`} passHref>
+          <Link
+            legacyBehavior
+            key={element}
+            href={`/movie/popular/page/${element}`}
+            passHref
+          >
             <a
               className={`bg-gray-800 text-gray-300 rounded-full px-4 py-2 hover:bg-gray-700 ${
                 pageid == element ? "bg-gray-700" : ""
@@ -36,7 +45,11 @@ const MovieDisplay = ({ movie, pageid }) => {
             </a>
           </Link>
         ))}
-        <Link href={`/movie/popular/page/${Number(pageid) + 1}`} passHref>
+        <Link
+          legacyBehavior
+          href={`/movie/popular/page/${Number(pageid) + 1}`}
+          passHref
+        >
           <a className="bg-gray-800 text-gray-300 rounded-full px-4 py-2 hover:bg-gray-700">
             Next &raquo;
           </a>

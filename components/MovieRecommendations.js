@@ -80,6 +80,7 @@ const RecommendedMovies = ({ id }) => {
           .slice(currentMovieIndex, currentMovieIndex + 5)
           .map(({ id, poster_path, title, overview, media_type }) => (
             <Link
+              legacyBehavior
               href={media_type === "movie" ? `/movie/${id}` : `/tv/${id}`}
               key={id}
               passHref

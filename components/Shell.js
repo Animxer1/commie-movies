@@ -34,17 +34,17 @@ export default function Layout({ children }) {
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
                 <li className="rounded-md">
-                  <Link className="rounded-md" href="/">
+                  <Link legacyBehavior className="rounded-md" href="/">
                     Movies
                   </Link>
                 </li>
                 <li className="rounded-md">
-                  <Link className="rounded-md" href="/tv">
+                  <Link legacyBehavior className="rounded-md" href="/tv">
                     Tv
                   </Link>
                 </li>
                 <li className="rounded-md">
-                  <Link className="rounded-md" href="/search">
+                  <Link legacyBehavior className="rounded-md" href="/search">
                     Search
                   </Link>
                 </li>
@@ -57,13 +57,19 @@ export default function Layout({ children }) {
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 bg-base-100">
             <li>
-              <Link href="/">Movies</Link>
+              <Link legacyBehavior href="/">
+                Movies
+              </Link>
             </li>
             <li>
-              <Link href="/tv">Tv</Link>
+              <Link legacyBehavior href="/tv">
+                Tv
+              </Link>
             </li>
             <li>
-              <Link href="/search">Search</Link>
+              <Link legacyBehavior href="/search">
+                Search
+              </Link>
             </li>
           </ul>
         </div>
