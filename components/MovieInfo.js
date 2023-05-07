@@ -11,7 +11,6 @@ const MovieInfo = ({ MovieDetail, genreArr, id }) => {
             <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
             <div className="flex items-center text-white text-sm mb-4">
               <svg className="fill-current text-orange-500 w-4 h-4 mr-1" viewBox="0 0 24 24">
-                {/* ... */}
               </svg>
               <span>{vote_average}</span>
               <span className={`text-white text-sm mb-4 \${vote_average && 'mx-2'}`}>|</span>
