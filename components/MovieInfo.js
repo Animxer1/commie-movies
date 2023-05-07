@@ -37,7 +37,7 @@ const MovieInfo = ({ MovieDetail, genreArr, id }) => {
               {/* Video iframe */}
               <iframe
                 className="w-full h-full rounded-lg aspect-video"
-                src={`https://www.2embed.to/embed/tmdb/movie?id=\${id}`}
+                src={`https://www.2embed.to/embed/tmdb/movie?id=${id}`}
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
