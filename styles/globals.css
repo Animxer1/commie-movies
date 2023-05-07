@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.h-full {
+  height: 50% !important;
+}
+
+@media screen and (min-width: 480px) {
+  .min-h-screen {
+    min-height: 85vh;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .min-h-screen {
+    min-height: 100vh;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .min-h-screen {
+    min-height: 130vh;
+  }
+}
+
+.animate-slide {
+  animation: slide 0.5s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.recommended-movie-image {
+  width: 500px;
+  height: 750px;
+}
