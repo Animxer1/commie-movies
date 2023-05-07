@@ -3,10 +3,7 @@ import MovieCard from "./MovieCards";
 
 const MovieDisplay = ({ movie, pageid }) => {
   const pagenum = Array.from({ length: 10 }, (_, i) => i + 1);
-
-  if (isNaN(pageid)) {
-    pageid = 1;
-  }
+  pageid = isNaN(pageid) ? 1 : +pageid;
 
   return (
     <div className="popular-movies md:mx-24">
@@ -20,36 +17,23 @@ const MovieDisplay = ({ movie, pageid }) => {
         ))}
       </div>
       <div className="flex justify-center mt-8 space-x-4 mb-10">
-        <Link
-          legacyBehavior
-          href={`/movie/popular/page/${Number(pageid) - 1}`}
-          passHref
-        >
+        <Link legacyBehavior href={`/movie/popular/page/${pageid - 1}`} passHref>
           <a className="bg-gray-800 text-white rounded-full px-4 py-2 hover:bg-gray-700">
             &laquo; Prev
           </a>
         </Link>
         {pagenum.map((element) => (
-          <Link
-            legacyBehavior
-            key={element}
-            href={`/movie/popular/page/${element}`}
-            passHref
-          >
+          <Link legacyBehavior key={element} href={`/movie/popular/page/${element}`} passHref>
             <a
               className={`bg-gray-800 text-white rounded-full px-4 py-2 hover:bg-gray-700 ${
-                pageid == element ? "bg-gray-700" : ""
+                pageid === element ? "bg-gray-700" : ""
               }`}
             >
               {element}
             </a>
           </Link>
         ))}
-        <Link
-          legacyBehavior
-          href={`/movie/popular/page/${Number(pageid) + 1}`}
-          passHref
-        >
+        <Link legacyBehavior href={`/movie/popular/page/${pageid + 1}`} passHref>
           <a className="bg-gray-800 text-white rounded-full px-4 py-2 hover:bg-gray-700">
             Next &raquo;
           </a>
