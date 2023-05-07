@@ -2,7 +2,6 @@
 import Shell from "../../../../../components/Shell";
 //import Footer from '../../../../../components/Footer'
 import SeasonInfo from "../../../../../components/SeasonInfo";
-import Script from "next/script";
 import Head from "next/head";
 
 // Define getServerSideProps function to fetch data from external API
@@ -15,7 +14,7 @@ export async function getServerSideProps({ query }) {
 
   // Fetch season data from the API
   const res = await fetch(
-    `https://api.themoviedb.org/3/tv/\${id}/season/\${seasonid}?api_key=\${apiKey}&language=en-US`
+    `https://api.themoviedb.org/3/tv/${id}/season/${seasonid}?api_key=${apiKey}&language=en-US`
   );
 
   // Parse JSON response from the API
