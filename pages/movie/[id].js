@@ -48,7 +48,7 @@ export default function MovieDetail({ movieDetail, genreArr, id }) {
         <Shell>
           <MovieInfo MovieDetail={movieDetail} genreArr={genreArr} id={id} />
           <MovieRecommendations id={movieDetail.id} />
-          <Comments/>
+          <Comments />
         </Shell>
       </div>
     </>
