@@ -1,5 +1,5 @@
 // Import React library
-import React from 'react';
+import React from "react";
 
 // Define MovieInfo functional component
 const MovieInfo = ({ MovieDetail, genreArr, id }) => {
@@ -18,10 +18,18 @@ const MovieInfo = ({ MovieDetail, genreArr, id }) => {
             <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
             {/* Movie details (rating, release date, runtime, genres) */}
             <div className="flex items-center text-white text-sm mb-4">
-              <svg className="fill-current text-orange-500 w-4 h-4 mr-1" viewBox="0 0 24 24">
-              </svg>
+              <svg
+                className="fill-current text-orange-500 w-4 h-4 mr-1"
+                viewBox="0 0 24 24"
+              ></svg>
               <span>{vote_average}</span>
-              <span className={`text-white text-sm mb-4 \\${vote_average && 'mx-2'}`}>|</span>
+              <span
+                className={`text-white text-sm mb-4 \\${
+                  vote_average && "mx-2"
+                }`}
+              >
+                |
+              </span>
               <span>{release_date}</span>
               <span className="mx-2">|</span>
               <span>{runtime} minutes</span>

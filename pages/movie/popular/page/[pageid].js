@@ -1,16 +1,18 @@
 import Shell from "../../../../components/Shell";
 import MovieDisplay from "../../../../components/MovieDisplay";
 
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 async function getServerSideProps({ query }) {
   const apiKey = process.env.API_KEY;
   const { pageid } = query;
-  const res = await fetch(
+  const data = await fetcher(
     `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=${pageid}`
   );
-  const data = await res.json();
+
   return {
     props: {
-      TopRatedPage: data.results || [],
+      TopRatedPage: data?.results || [],
     },
   };
 }

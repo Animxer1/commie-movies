@@ -1,55 +1,60 @@
+// Import the Link component from Next.js
 import Link from "next/link";
 
+// Create the SeasonInfo component that receives SeasonDetail and tvID as props
 const SeasonInfo = ({ SeasonDetail, tvID }) => {
-  const epArray = SeasonDetail.episodes;
+  // Destructure episodes, season_number, and overview properties from SeasonDetail
+  const { episodes, season_number, overview } = SeasonDetail;
 
+  // Return the JSX structure for the SeasonInfo component
   return (
     <div className="text-center min-h-screen season-details md:mx-24">
       <div className="container mx-auto px-4 py-11 flex flex-col md:flex-row season-container place-content-center">
         <div>
+          {/* Display the season number as a heading */}
           <h2 className="text-4xl mt-4 md:mt-0 font-semibold text-white">
-            Season {SeasonDetail.season_number}
+            Season {season_number}
           </h2>
-
-          <p className="text-white mt-8">{SeasonDetail.overview}</p>
+          {/* Display the season overview */}
+          <p className="text-white mt-8">{overview}</p>
         </div>
       </div>
-      {/* <div className="pt-2 pb-8">
-              <iframe className="w-full aspect-video sm: pr-4 pl-4" src={`https://www.2embed.ru/embed/tmdb/tv?id=${tvID}&s=${SeasonDetail.season_number}&e=1`} frameBorder={`0`} allowFullScreen={true}></iframe>
-          </div> */}
       <div className="flex flex-wrap flex-row justify-center h-full">
-        {epArray.map((element, index) => (
-          <div key={index + 1} className="px-1 py-1 overflow-hidden">
-            <Link
-              legacyBehavior
-              href={`/tv/${tvID}/season/${SeasonDetail.season_number}/${
-                index + 1
-              }`}
-            >
-              <a key={index + 2}>
-                <img
-                  key={index + 3}
-                  className="w-72 rounded-sm hover:opacity-70"
-                  src={
-                    element.still_path
-                      ? `https://image.tmdb.org/t/p/w342${element.still_path}`
-                      : "https://i.imgur.com/HIYYPtZ.png"
-                  }
-                  alt={element.name}
-                />
-                <p
-                  key={index + 4}
-                  className="bg-zinc-800 max-w-[18rem] rounded-sm break-words text-white text-sm leading-0 font-semibold py-2"
-                >
-                  {SeasonDetail.season_number} x {index + 1} : {element.name}
-                </p>
-              </a>
-            </Link>
-          </div>
-        ))}
+        {/* Map through the episodes array and render each episode */}
+        {episodes.map(({ still_path, name }, index) => {
+          const episodeNumber = index + 1;
+          const imageUrl = still_path
+            ? `https://image.tmdb.org/t/p/w342${still_path}`
+            : "https://i.imgur.com/HIYYPtZ.png";
+
+          // Return the JSX structure for each episode
+          return (
+            <div key={episodeNumber} className="px-1 py-1 overflow-hidden">
+              {/* Use the Link component to navigate to the episode details page */}
+              <Link
+                legacyBehavior
+                href={`/tv/${tvID}/season/${season_number}/${episodeNumber}`}
+              >
+                <a>
+                  {/* Display the episode image */}
+                  <img
+                    className="w-72 rounded-sm hover:opacity-70"
+                    src={imageUrl}
+                    alt={name}
+                  />
+                  {/* Display the episode number and name */}
+                  <p className="bg-zinc-800 max-w-[18rem] rounded-sm break-words text-white text-sm leading-0 font-semibold py-2">
+                    {season_number} x {episodeNumber} : {name}
+                  </p>
+                </a>
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 };
 
+// Export the SeasonInfo component
 export default SeasonInfo;

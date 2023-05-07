@@ -14,7 +14,12 @@ const MovieCards = ({ MovieCard }) => {
       <div className="rounded-md overflow-hidden">
         {/* Use the Link component for client-side navigation */}
         {/* TODO: remove legacyBehavior */}
-        <Link legacyBehavior key={MovieCard.id} href="/movie/[id]" as={`/movie/${MovieCard.id}`}>
+        <Link
+          legacyBehavior
+          key={MovieCard.id}
+          href="/movie/[id]"
+          as={`/movie/${MovieCard.id}`}
+        >
           {/* Create an anchor tag with the movie's title as the title attribute */}
           <a title={MovieCard.title}>
             {/* Display the movie poster image */}
