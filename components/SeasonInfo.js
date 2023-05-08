@@ -5,7 +5,6 @@ import Link from "next/link";
 const SeasonInfo = ({ SeasonDetail, tvID }) => {
   // Destructure episodes, season_number, and overview properties from SeasonDetail
   const { episodes, season_number, overview } = SeasonDetail;
-
   // Return the JSX structure for the SeasonInfo component
   return (
     <div className="text-center min-h-screen season-details md:mx-24">
