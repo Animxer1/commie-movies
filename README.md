@@ -26,3 +26,6 @@ visitors are identified by a hash created from the incoming request.
 Using a generated hash provides a privacy-friendly experience for your visitors
 and means visitors can't be tracked between different days or different websites.
 ```
+
+## Contributing
+Dev work should be done on the dev branch, since the main instance(https://commiemovies.ml) is running off of the latest code in main
