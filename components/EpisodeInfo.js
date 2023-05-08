@@ -1,10 +1,16 @@
+// Import the required hooks and components
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+// Define the EpisodeInfo component
 const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
+  // Destructure the EpisodeDetail object
   const { name, air_date, overview, vote_average, vote_count } = EpisodeDetail;
+
+  // Initialize the state for episode navigation
   const [episodeNav, setEpisodeNav] = useState({ prevEp: null, nextEp: null });
 
+  // Update the episode navigation state when the epid prop changes
   useEffect(() => {
     setEpisodeNav({
       prevEp: epid > 1 ? epid - 1 : null,
@@ -12,12 +18,14 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
     });
   }, [epid]);
 
+  // Define a function to render navigation links
   const renderNavLink = (linkText, linkHref) => (
     <Link legacyBehavior href={linkHref}>
       <a className="bg-gray-900 text-white px-6 py-3 rounded-md mr-4">{linkText}</a>
     </Link>
   );
 
+  // Render the EpisodeInfo component
   return (
     <div className="episode-details container mx-auto px-4 py-11 md:mx-24">
       <div className="flex flex-col md:flex-row episode-container justify-center items-center">
@@ -33,9 +41,11 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
             <span>{vote_count} votes</span>
           </div>
           <div className="flex justify-center">
+            {/* Render the previous episode link if available */}
             {episodeNav.prevEp &&
               renderNavLink("Previous Episode", `/tv/${showid}/season/${seasonid}/${episodeNav.prevEp}`)}
 
+            {/* Render the next episode link if available */}
             {episodeNav.nextEp &&
               renderNavLink("Next Episode", `/tv/${showid}/season/${seasonid}/${episodeNav.nextEp}`)}
           </div>
@@ -55,4 +65,5 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
   );
 };
 
+// Export the EpisodeInfo component
 export default EpisodeInfo;
