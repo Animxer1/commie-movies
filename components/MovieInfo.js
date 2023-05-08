@@ -5,7 +5,6 @@ import React from "react";
 const MovieInfo = ({ MovieDetail, genreArr, id }) => {
   // Destructure properties from MovieDetail object
   const { title, vote_average, release_date, runtime, overview } = MovieDetail;
-
   return (
     <>
       {/* Container for movie details */}

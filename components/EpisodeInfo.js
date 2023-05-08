@@ -6,10 +6,8 @@ import Link from "next/link";
 const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
   // Destructure episode details
   const { name, air_date, overview, vote_average, vote_count } = EpisodeDetail;
-
   // Initialize state for episode navigation
   const [episodeNav, setEpisodeNav] = useState({ prevEp: null, nextEp: null });
-
   // Update episode navigation links when epid changes
   useEffect(() => {
     setEpisodeNav({

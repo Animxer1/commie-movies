@@ -4,7 +4,6 @@ import MovieCard from "./MovieCards";
 const MovieDisplay = ({ movie, pageid }) => {
   const pagenum = Array.from({ length: 10 }, (_, i) => i + 1);
   pageid = isNaN(pageid) ? 1 : +pageid;
-
   return (
     <div className="popular-movies md:mx-24">
       <div className="flex flex-wrap overflow-hidden sm:-mx-2 pl-2 md:-mx-2 lg:-mx-2 xl:-mx-2">

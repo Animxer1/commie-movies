@@ -6,7 +6,6 @@ function Comments() {
     const removeCommentBox = commentBox("5640342153986048-proj");
     return () => removeCommentBox();
   }, []);
-
   return <div className="commentbox" />;
 }
 
