@@ -7,11 +7,15 @@ const RecommendedMovies = ({ id }) => {
 
   useEffect(() => {
     const fetchRecommendedMovies = async () => {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=04c908115dc6ff5e5aa3709b5a735393`
-      );
-      const { results } = await res.json();
-      setRecommendedMovies(results);
+      try {
+        const res = await fetch(
+          `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=04c908115dc6ff5e5aa3709b5a735393`
+        );
+        const { results } = await res.json();
+        setRecommendedMovies(results);
+      } catch (error) {
+        console.log(`Error: \${error}`);
+      }
     };
     fetchRecommendedMovies();
   }, [id]);
@@ -72,41 +76,27 @@ const RecommendedMovies = ({ id }) => {
           </svg>
         </button>
       </div>
-      <div
-        className="flex pb-4 recommended-movies-list animate-slide"
-        style={{ width: "100%" }}
-      >
-        {recommendedMovies
-          .slice(currentMovieIndex, currentMovieIndex + 5)
-          .map(({ id, poster_path, title, overview, media_type }) => (
-            <Link
-              legacyBehavior
-              href={media_type === "movie" ? `/movie/${id}` : `/tv/${id}`}
-              key={id}
-              passHref
-            >
-              <a
-                className="focus:ring"
-                style={{ flex: "1 1 20%", maxWidth: "20%" }}
-              >
-                <div className="pr-4">
-                  <div className="bg-gray-900 shadow-lg rounded-lg aspect-square">
-                    <img
-                      className="w-full h-64 object-cover object-center aspect-square"
-                      src={`https://image.tmdb.org/t/p/original${poster_path}`}
-                      alt={title}
-                      style={{ objectFit: "cover" }} // add this line
-                    />
-
-                    <div className="p-4">
-                      <h3 className="font-medium text-white mb-2">{title}</h3>
-                      <p className="text-white">{overview}</p>
-                    </div>
+      <div className="flex pb-4 recommended-movies-list animate-slide" style={{ width: "100%" }}>
+        {recommendedMovies.slice(currentMovieIndex, currentMovieIndex + 5).map(({ id, poster_path, title, overview, media_type }) => (
+          <Link legacyBehavior key={id} href={media_type === "movie" ? `/movie/${id}` : `/tv/${id}`} passHref>
+            <a className="focus:ring" style={{ flex: "1 1 20%", maxWidth: "20%" }}>
+              <div className="pr-4">
+                <div className="bg-gray-900 shadow-lg rounded-lg aspect-square">
+                  <img
+                    className="w-full h-64 object-cover object-center aspect-square"
+                    src={`https://image.tmdb.org/t/p/original${poster_path}`}
+                    alt={title}
+                    style={{ objectFit: "cover" }}
+                  />
+                  <div className="p-4">
+                    <h3 className="font-medium text-white mb-2">{title}</h3>
+                    <p className="text-white">{overview}</p>
                   </div>
                 </div>
-              </a>
-            </Link>
-          ))}
+              </div>
+            </a>
+          </Link>
+        ))}
       </div>
     </div>
   );
