@@ -54,7 +54,7 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
           <div className="aspect-w-16 aspect-h-9">
             <iframe
               className="w-full h-full rounded-lg aspect-video"
-              src={`https://www.2embed.to/embed/tmdb/tv?id=${showid}&s=${seasonid}&e=${epid}`}
+              src={`https://autoembed.to/tv/tmdb/${showid}-${seasonid}-${epid}`}
               frameBorder="0"
               allowFullScreen
             />
