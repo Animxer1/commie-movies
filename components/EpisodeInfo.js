@@ -54,8 +54,7 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
           <div className="aspect-w-16 aspect-h-9">
             <iframe
               className="w-full h-full rounded-lg aspect-video"
-              //src={`https://autoembed.to/tv/tmdb/${showid}-${seasonid}-${epid}`}
-              src={`https://remotestre.am/d/?tmdb=${showid}&amp;s=${seasonid}&amp;e=${epid};apikey=whXgvN4kVyoubGwqXpw26Oy3PVryl8dm`}
+              src={`https://remotestre.am/e/?tmdb=${showid}&s=${seasonid}&e=${epid}&apikey=whXgvN4kVyoubGwqXpw26Oy3PVryl8dm`}
               frameBorder="0"
               allowFullScreen
             />
