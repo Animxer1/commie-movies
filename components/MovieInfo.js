@@ -44,7 +44,7 @@ const MovieInfo = ({ MovieDetail, genreArr, id }) => {
               {/* Video iframe */}
               <iframe
                 className="w-full h-full rounded-lg aspect-video"
-                src={`https://remotestre.am/e/?tmdb={id}&amp;apikey=whXgvN4kVyoubGwqXpw26Oy3PVryl8dm`}
+                src={`https://embed.smashystream.com/playere.php?tmdb={id}`}
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
