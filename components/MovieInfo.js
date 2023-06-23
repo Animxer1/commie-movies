@@ -44,7 +44,7 @@ const MovieInfo = ({ MovieDetail, genreArr, id }) => {
               {/* Video iframe */}
               <iframe
                 className="w-full h-full rounded-lg aspect-video"
-                src={`https://embed.smashystream.com/playere.php?tmdb={id}`}
+                src={`https://flix.smashystream.xyz/playere.php?tmdb={id}`}
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
