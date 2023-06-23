@@ -54,7 +54,7 @@ const EpisodeInfo = ({ EpisodeDetail, seasonid, epid, showid }) => {
           <div className="aspect-w-16 aspect-h-9">
             <iframe
               className="w-full h-full rounded-lg aspect-video"
-              src={`https://embed.smashystream.com/playere.php?imdb=${showid}&season=${seasonid}&episode=${epid}`}
+              src={`https://flix.smashystream.xyz/playere.php?imdb=${showid}&season=${seasonid}&episode=${epid}`}
               frameBorder="0"
               allowFullScreen
             />
